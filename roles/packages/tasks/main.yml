@@ -1,0 +1,7 @@
+---
+- name: Add required packages for graylog
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+     - policycoreutils-python
+

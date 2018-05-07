@@ -1,0 +1,6 @@
+---
+galaxy_info:
+  author: Simon Weller
+  description: Install Packages
+  dependencies:
+  version: 0.1.0

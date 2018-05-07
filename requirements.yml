@@ -1,0 +1,10 @@
+- src: reallyenglish.ntpd
+  name: ntpd
+  path: roles/ntpd/
+- src: https://github.com/myENA/stack-common/archive/master.tar.gz
+  name: stack-common
+  path: roles/common
+
+- src: rbicker.nextcloud
+  path: roles/nextcloud
+    
