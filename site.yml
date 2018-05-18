@@ -29,3 +29,6 @@
    nextcloud_mysql_pw: "{{ lookup('password', 'credentials/mysqlpassword length=15') }}"
    nextcloud_hsts_options: max-age=15768000; includeSubDomains; preload; # if set, hsts will be enabled with the given options
    nextcloud_upgrade: true # if set to true, nextcloud's updater.phar is run to upgrade nextcloud to the latest version
+  
+  tasks:
+    - import_tasks: tasks/main.yml

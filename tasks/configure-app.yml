@@ -1,0 +1,30 @@
+- name: Put SELinux in permissive mode, logging actions that would be blocked.
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: Restart DBUS
+  command: systemctl restart dbus
+
+- name: Enable service firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- name: Add TCP port 80 to firewall rules
+  firewalld:
+    service: http
+    permanent: true
+    state: enabled
+
+- name: Add TCP port 443 to firewall rules
+  firewalld:
+    service: https
+    permanent: true
+    state: enabled
+
+- name: Put SELinux in enabled mode
+  selinux:
+    policy: targeted
+    state: enforcing
